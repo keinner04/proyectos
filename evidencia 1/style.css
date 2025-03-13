@@ -1,0 +1,59 @@
+.titulo{
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.div_img{
+text-align: center;
+
+}
+.div_tabla{
+color: gray;
+}
+.div_boton{
+text-align: center;
+}
+body{
+    margin: auto;
+    background-color:#f4f4f4;
+}
+.principal_div{
+    margin:auto;
+    width: 70%;
+    background-color: #ffffff;
+    padding: 40px 40px 40px 40px;
+    border-radius: 10px;
+}
+img{
+    width: 30%;
+    height: 30%;
+}
+p{
+    padding-bottom: 30px;
+}
+button{
+    padding: 10px 30px 10px 30px;
+    background-color: black;
+    color: white;
+}
+.parrafo1{
+    color: gray;
+}
+.temas{
+    color: gray;
+}
+.nombre{
+    font-size: 40px;
+}
+
+.face,.twitter,.instagram{
+    text-align: center;
+    display: inline;
+    margin: 10px ;
+
+}
+footer{
+    text-align: center;
+}

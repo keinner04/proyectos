@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+}
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 3fr 1fr ;
+    margin: 5px;
+    gap: 20px;
+    background-color: #1D202B;
+    padding: 50px 50px 400px 50px;
+}
+.contenedor-conciertos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.card{
+    height: 300px;
+    border-radius: 10px;
+    background-position: center;
+    background-size:cover;
+    max-width: 100%;
+
+}
+.textos{
+    color: white;
+    justify-content: space-between;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.banner{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-position: center;
+    background-size:cover;
+    max-width: 100%;
+
+}
+ul{
+    color: white;
+    padding: 0;
+
+}
+li{
+    padding: 15px;
+    list-style: none;
+
+}
+.titulo{
+    color: white;
+    display: flex;
+
+}
+button{
+    padding: 10px;
+    width: 90%;
+    border-radius: 20px;
+    background-color: yellow;
+}

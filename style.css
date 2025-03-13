@@ -1,0 +1,55 @@
+body{
+    background-color: grey;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.conte_proyectos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    width: 70%;
+
+}
+.proyectos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, grey, black);
+    color: white;
+    width: 80%;
+    box-shadow: -2px 2px 15px white;
+    gap: 30px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    border-radius: 10px;
+}
+.proyectos:hover{
+    transform: scale(1.05);
+}
+a{
+    color: white;
+    background-color: blue;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.5s;
+    margin-bottom: 20px;
+}
+a:hover{
+    background-color: blueviolet;
+}
+.mis_pro{
+    text-align: center;
+    color: black;
+}
+p{
+    font-size: 20px;
+}
+@media (max-width: 800px){
+    .conte_proyectos{
+        grid-template-columns: 1fr;
+    }
+}

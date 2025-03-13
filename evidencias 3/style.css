@@ -1,0 +1,217 @@
+body{
+    margin: 0px;
+}
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.fila1{
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    
+}
+.fila2{
+    background-color: orangered;
+    text-align: center; 
+    padding-top: 20px;
+}
+.fila3{ 
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.conte_proyectos{
+    width: 65%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+    text-align: center;
+}
+.texto{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.texto1{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.texto2{
+    font-size: 25px;
+}
+.tex_footer{
+    margin: 0px 100px;
+}
+.img1{
+    display: flex;
+    justify-content: end;
+    width: 90%;
+}
+.img1-1{
+    width: 90%;
+}
+
+h1{
+    font-size: 50px;
+    margin: 0;
+}
+.quien{
+    font-size: 50px;
+    margin: 0;
+    color: orangered;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+    
+}
+.lorem2{
+    font-size: 30px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    margin: 30px ;
+    color: white;
+}
+.lorem3{
+    font-size: 20px;
+}
+.mis_pro{
+    text-align: center;
+    margin: 20px;
+}
+.proyectos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgba(128, 128, 128, 0.327);
+    margin: 10px;
+}
+.quiensoy{
+    background-color: orangered;
+    padding: 5px;
+    height: 30px;
+    width: 70px;
+    border: 0px;
+    color: white;
+    border-radius: 5px;
+}
+.iper_pro{
+    margin: 0px 0px 10px;
+    padding: 10px;
+    background-color: orangered;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+.img_pro{
+    width: 100%;
+}
+.link1{
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+.link2,.link3{
+    margin: 10px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.562);
+    font-size: 25px;
+}
+.kei{
+    font-size: 25px;
+    color: white;
+    font-style: italic;
+}
+footer{
+    color: white;
+    background-color: black;
+    padding: 10px;
+    font-size: 18px;
+    text-align: right;
+}
+
+@media (max-width:1000px){
+    .fila1{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+    .img1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .texto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .quiensoy{
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .conte_proyectos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+@media (max-width:600px){
+    .conte_proyectos{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .iper{
+        display: flex;
+        justify-content: center;
+    }
+    .texto1{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+    .texto2{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        margin: 0px;
+    }
+    .iper{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+    }
+    .img1-1{
+        margin-top: 60px;
+    }
+    img2_1{
+        width: 100%;
+    }
+    .tex_footer{
+        text-align: center;
+    }
+    .link1,.link2,.link3{
+        font-size: 23px;
+    }
+}
