@@ -1,0 +1,175 @@
+/* Importar tipos de letras */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Estilo contenedores principales */
+*{
+    margin: 0;
+}
+body{
+    margin: 0px;
+}
+.miperfil{
+    display: grid;
+    grid-template-columns: 0.8fr 3fr;
+}
+/* Estilo contendores secundarios  */
+.con_img{
+    background-color: orange;
+    color: white;
+    
+}
+.info{
+    margin: 30px;
+}
+/* Estilo contenedores terciarios */
+
+.nombre,.ubicacion,.idiomas,.habi_info,.cursos,.resumen_profesional,.historial_labo{
+    margin-bottom: 20px;
+}
+.nombre{
+    font-family: "Roboto", sans-serif;
+}
+
+.historial_labo{
+    margin: 0px;
+}
+/* Estilos de clases */
+.hr1{
+    width: 5%;
+    padding: 3px;
+    background-color: white;
+    border: 0px solid white;
+}
+.position{
+    position: relative;
+    z-index: 1;
+}
+.hrs{
+    width: 50%;
+    position: absolute;
+    top:7px;
+    z-index: 1;
+}
+.Linea{
+    width:100%;
+    background-color: black;
+    border-color: 2px solid black;
+    margin: 3px 0px;
+}
+.img1{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    position: relative;
+    z-index: 2;
+
+}
+
+.e{
+    width: 100%;
+    background-color: azure;
+    border: 1px solid black;
+}
+
+.ul_historia_labo{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.aptitudes{
+    margin-left: 30px;
+}
+
+
+
+hr{
+    width: 1%;
+    padding: 2px;
+    background-color: orange;
+    border: 0px solid orange;
+}  
+
+ul{
+    margin: 5px;
+    padding: 10px;
+    text-align: left;
+}
+
+h3{
+    color:orange;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+@media(max-width:800px){
+    .miperfil{
+        display: grid;
+        grid-template-columns: 1fr ;
+        text-align: left;
+    }
+    .con_img{
+        display: flex;
+    }
+    .aptitudes{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: start;
+        margin: 0px;
+        position: relative;
+    }
+    .aptitudes h2{
+        margin: 0px;
+    }
+
+    .info{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .aptitudes2{
+        position: absolute;
+        left: 105px;
+    }
+
+}
+@media(max-width:660px){
+    .aptitudes{
+        position: relative;
+    }
+    .aptitudes2{
+        position: absolute;
+        left: 40px;
+    }
+}
+@media(max-width:545px){
+    .info{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media(max-width:517px){
+    .aptitudes{
+        position: relative;
+    }
+    .aptitudes2{
+        position: absolute;
+        left: 0px;
+    }
+}
+@media(max-width:470px) {
+    .con_img{
+        display: flex;
+        flex-direction: column;
+    }
+    .aptitudes{
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .aptitudes2{
+        position: static;
+        text-align: start;
+
+    }
+
+}
