@@ -53,9 +53,6 @@ p{
         grid-template-columns: 1fr;
     }
     .p_proyecto{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        text-align: center;
     }
 }
