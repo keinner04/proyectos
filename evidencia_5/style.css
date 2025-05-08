@@ -55,7 +55,10 @@ nav {
   z-index: 10;
   position: relative;
 }
-
+.div_nav{
+  display: flex;
+  justify-content: space-between;
+}
 .con_nav {
   display: flex;
   justify-content: space-between;
@@ -883,10 +886,8 @@ button {
     grid-column: span 2;
 
   }
-  .con_nav{
-    display: grid;
-    grid-template-rows:1fr 1fr ;
-    width: max-content;
+  .link1{
+    padding: 0 10px;
   }
   .div_nav{
     display: flex;
@@ -904,6 +905,18 @@ button {
   }
 }
 @media(max-width:699px){
+  .con_nav{
+    display: grid;
+    grid-template-rows:1fr  ;
+    width: max-content;
+  }
+  .botones_nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
   .boton_info{
     margin-top: 30px;
   }
@@ -932,6 +945,9 @@ button {
   .dentro_boton .flecha {
     right: 6px;
     top:7px;
+  }
+  .link1{
+    padding: 0 13px;
   }
 }
 @media(max-width:699px){
