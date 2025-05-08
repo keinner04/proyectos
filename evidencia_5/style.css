@@ -979,12 +979,22 @@ button {
     width: 100%;
   }
 }
+@media(max-width:647px){
+  .fondo_circulos{
+    width: 400px; ;
+    height: 200px;
+  }
+}
 @media(max-width:548px){
   .div_nav{
     flex-direction: column;
   }
   .links_nav{
     padding-bottom: 10px;
+  }
+  .fondo_circulos{
+    width: 370px; ;
+    height: 170px;
   }
 }
 @media(max-width:529px){
