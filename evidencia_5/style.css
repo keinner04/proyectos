@@ -57,6 +57,7 @@ nav {
 }
 .div_nav{
   display: flex;
+
   justify-content: space-between;
 }
 .con_nav {
@@ -907,7 +908,7 @@ button {
 @media(max-width:699px){
   .con_nav{
     display: grid;
-    grid-template-rows:1fr  ;
+    grid-template-rows:1fr 1fr ;
     width: max-content;
   }
   .botones_nav{
@@ -919,12 +920,6 @@ button {
 
   .boton_info{
     margin-top: 30px;
-  }
-  .fondo_hojas{
-    display: none;
-  }
-  nav{
-    background-color: rgba(0, 128, 0, 0.7);
   }
   .link {
     color: white;
@@ -953,13 +948,13 @@ button {
 @media(max-width:699px){
   .info {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
   .fondo_circulos{
-    display: none;
+
   }
   .p_info{
     text-align: center;
