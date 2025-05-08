@@ -1,0 +1,1014 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.contenedor_principal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image:url('/evidencia_5/img/Diseñosintítulo.png'); */
+}
+
+.fondo_hojas {
+  height: 300px;
+  position: absolute;
+  left: 230px;
+}
+
+.fondo_circulos {
+  height: 480px;
+  width: 800px;
+  position: absolute;
+  right: 200px;
+  top: 0vh;
+}
+
+.fondo_hojas_pequeñas {
+  height: 200px;
+  position: absolute;
+  right: 200px;
+  top: 900px;
+}
+
+.contenedor {
+  width: 70%;
+}
+
+.fila2 {
+  margin: 50px 0;
+}
+
+.fila3 {
+  margin-top: 30px;
+
+}
+
+/* Estilo nav */
+nav {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+}
+
+.con_nav {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.nombre_nav {
+  font-size: 25px;
+}
+
+.lupa,
+.compras {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inicio {
+  border-radius: 30px;
+  padding: 5px 15px;
+  margin: 0px 15px;
+  font-size: 17px;
+}
+
+.link1 {
+  font-size: 20px;
+  padding: 0 30px;
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+}
+
+.link {
+  color: green;
+}
+
+button {
+  border-radius: 50px;
+  margin: 0px 3px;
+  border: 0px solid white;
+  background-color: white;
+}
+
+
+/* Estilo primer contenedor */
+
+.info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding-bottom: 50px;
+}
+
+.boton_info {
+  border: 1px solid black;
+  font-size: 20px;
+  padding: 5px 15px;
+}
+
+.img_info {
+  z-index: 20;
+  position: relative;
+}
+
+.texto_info {
+  font-size: 45px;
+}
+
+.p_info {
+  font-size: 25px;
+  text-align: left;
+  width: 70%;
+}
+
+.boton1_info {
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  padding: 15px 40px;
+}
+
+.boton2_info {
+  border: 1px solid black;
+  font-size: 15px;
+  padding: 14px 30px;
+  position: relative;
+}
+
+.dentro_boton .flecha {
+  position: absolute;
+  right: 10px;
+  top: 11px;
+}
+
+.dentro_boton {
+  padding: 0 10px;
+}
+
+/* Estilo segundo contenedor */
+.menu {
+  width: 100%;
+  align-items: center;
+}
+
+.sub_menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.comida {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sub_comida {
+  box-shadow: 10px 5px 8px rgba(0, 0, 0, 0.1),
+    -10px 5px 8px rgba(0, 0, 0, 0.1);
+  width: 75%;
+  height: 220px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+.texto_comida {
+  width: 75%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.img_comida {
+  height: 220px;
+  width: 220px;
+  position: absolute;
+  z-index: 20;
+  top: -130px;
+}
+
+.botones_comida {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.boton2_comida {
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  padding: 5px 15px;
+}
+
+.boton_comida {
+  border: 1px solid black;
+  font-size: 15px;
+  padding: 5px 15px;
+  position: relative;
+}
+
+/* Estilo contenedor 3 */
+.info_envios {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 35px;
+  margin-bottom: 110px;
+
+}
+
+.carta {
+  box-shadow: 10px 5px 8px rgba(0, 0, 0, 0.1),
+    -10px 5px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.texto_envio {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.p_envios {
+  font-size: 22px;
+  width: 30%;
+
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.icono {
+  font-size: 70px;
+  color: rgba(0, 128, 0, 0.536);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.titulo_carta {
+  font-size: 40px;
+  padding: 15px 0;
+}
+
+.p_carta {
+  font-size: 20px;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@media(max-width:2104px) {
+  .con_nav {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+  }
+
+  .contenedor {
+    width: 75%;
+  }
+
+  .fondo_hojas {
+    height: 300px;
+    position: absolute;
+    left: 190px;
+  }
+
+  .fondo_circulos {
+    height: 480px;
+    width: 800px;
+    position: absolute;
+    right: 170px;
+  }
+
+  .fondo_hojas_pequeñas {
+    height: 200px;
+    position: absolute;
+    right: 170px;
+    top: 900px;
+  }
+}
+
+@media(max-width:2000px) {
+  .con_nav {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+  }
+
+  .contenedor {
+    width: 75%;
+  }
+
+  .fondo_hojas {
+    height: 300px;
+    position: absolute;
+    left: 170px;
+  }
+
+  .fondo_circulos {
+    height: 480px;
+    width: 750px;
+    position: absolute;
+    right: 150px;
+  }
+
+  .fondo_hojas_pequeñas {
+    height: 200px;
+    position: absolute;
+    right: 150px;
+    top: 900px;
+  }
+}
+
+@media(max-width:1964px) {
+  .con_nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .contenedor {
+    width: 80%;
+  }
+
+  .fondo_hojas {
+    height: 300px;
+    position: absolute;
+    left: 120px;
+  }
+
+  .fondo_circulos {
+    height: 480px;
+    width: 750px;
+    position: absolute;
+    right: 120px;
+  }
+
+  .fondo_hojas_pequeñas {
+    height: 200px;
+    position: absolute;
+    right: 120px;
+    top: 900px;
+  }
+}
+
+@media(max-width:1841px) {
+  .con_nav {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+  }
+
+  .contenedor {
+    width: 85%;
+  }
+
+  .fondo_hojas {
+    height: 300px;
+    position: absolute;
+    left: 60px;
+  }
+
+  .fondo_circulos {
+    height: 480px;
+    width: 750px;
+    position: absolute;
+    right: 60px;
+  }
+
+  .fondo_hojas_pequeñas {
+    height: 200px;
+    position: absolute;
+    right: 60px;
+    top: 900px;
+  }
+
+  .sub_comida {
+    width: 80%;
+  }
+}
+
+@media(max-width:1733px) {
+  .con_nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .contenedor {
+    width: 90%;
+  }
+
+  .fondo_hojas {
+    height: 300px;
+    position: absolute;
+    left: 0;
+  }
+
+  .fondo_circulos {
+    height: 480px;
+    width: 750px;
+    position: absolute;
+    right: 0;
+  }
+
+  .fondo_hojas_pequeñas {
+    height: 200px;
+    position: absolute;
+    right: 0;
+    top: 900px;
+  }
+}
+
+@media(max-width:1637px) {
+  .sub_comida {
+    width: 85%;
+  }
+}
+
+@media(max-width:1579px) {
+  .texto_info {
+    font-size: 40px;
+  }
+
+  .sub_comida {
+    width: 85%;
+  }
+
+  .fondo_hojas {
+    height: 250px;
+    position: absolute;
+    left: 0;
+  }
+}
+
+@media(max-width:1507px) {
+  .texto_info {
+    font-size: 35px;
+  }
+
+  .fondo_circulos {
+    width: 700px;
+  }
+
+  .p_info {
+    padding: 25px 0;
+  }
+
+  .boton_info {
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+}
+
+@media(max-width:1444px) {
+  .texto_info {
+    font-size: 32px;
+  }
+
+  .fondo_circulos {
+    width: 680px;
+  }
+
+  .sub_comida {
+    width: 90%;
+  }
+}
+
+@media(max-width:1364px) {
+  .texto_info {
+    font-size: 31px;
+  }
+
+  .fondo_circulos {
+    width: 680px;
+  }
+
+  .sub_comida {
+    width: 95%;
+  }
+
+  .sub_menu {
+    gap: 10px;
+  }
+
+  .img_info {
+    width: 480px;
+  }
+}
+
+@media(max-width:1325px) {
+
+  .fondo_circulos {
+    width: 680px;
+  }
+
+  .sub_comida {
+    width: 100%;
+  }
+
+  .sub_menu {
+    gap: 25px;
+  }
+
+  .img_info {
+    width: 480px;
+  }
+}
+
+@media(max-width:1311px) {
+  .fondo_circulos {
+    width: 650px;
+    height: 420px;
+  }
+
+  .img_comida {
+    height: 220px;
+    width: 220px;
+    top: -140px;
+  }
+
+  .texto_comida {
+    width: 90%;
+  }
+
+}
+
+@media(max-width:1270px) {
+
+  .texto_info {
+    font-size: 29px;
+  }
+
+  .fondo_circulos {
+    width: 610px;
+    height: 380px;
+  }
+
+  .img_info {
+    width: 450px;
+    height: 400px;
+  }
+
+  .fila2 {
+    margin-top: 100px;
+  }
+
+  .img_comida {
+    height: 220px;
+    width: 220px;
+    top: -125px;
+  }
+
+  .texto_envio {
+    font-size: 20px;
+
+  }
+
+  .p_envios {
+    font-size: 18px;
+  }
+
+  .titulo_carta {
+    font-size: 34px;
+  }
+
+  .p_carta {
+    font-size: 16px;
+  }
+
+  .nombre_nav {
+    font-size: 21px;
+  }
+
+  .link1 {
+    font-size: 17px;
+
+  }
+}
+
+@media(max-width:1141px) {
+  .img_comida {
+    height: 200px;
+    width: 200px;
+    top: -110px;
+  }
+
+  .texto_info {
+    font-size: 24px;
+  }
+
+  .fondo_circulos {
+    width: 600px;
+    height: 370px;
+  }
+
+  .img_info {
+    width: 450px;
+    height: 400px;
+  }
+
+  .texto_comida {
+    width: 95%;
+  }
+}
+
+@media(max-width:1053px) {
+  .info {
+    display: grid;
+    grid-template-columns: 1, 5fr 1fr;
+  }
+
+  .texto_info {
+    font-size: 22px;
+  }
+
+  .fondo_circulos {
+    width: 570px;
+    height: 330px;
+  }
+
+  .fondo_hojas {
+    height: 200px;
+    width: 45px;
+    position: absolute;
+
+  }
+
+  .img_info {
+    width: 420px;
+    height: 370px;
+  }
+
+  .fila2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu {
+    width: 90%;
+    align-items: center;
+
+  }
+
+  .sub_menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .comida {
+    padding: 50px 0;
+  }
+
+  .img_comida {
+    height: 220px;
+    width: 220px;
+    position: absolute;
+    z-index: 20;
+    top: -70px;
+  }
+
+  .sub_comida {
+    width: 80%;
+  }
+
+  .nombre_nav {
+    font-size: 18px;
+  }
+
+  .link1 {
+    font-size: 14px;
+  }
+
+  .p_info {
+    font-size: 17px;
+  }
+
+  .fila2 {
+    margin-top: 30px;
+  }
+
+  .titulo_carta {
+    font-size: 29px;
+  }
+
+  .p_carta {
+    font-size: 12px;
+  }
+}
+
+@media(max-width:954px) {
+  .texto_info {
+    font-size: 19px;
+  }
+
+  .fondo_circulos {
+    width: 550px;
+    height: 310px;
+  }
+
+  .img_info {
+    width: 400px;
+    height: 350px;
+  }
+}
+
+@media(max-width:900px) {
+  .texto_info {
+    font-size: 18px;
+  }
+
+  .fondo_circulos {
+    width: 520px;
+    height: 280px;
+  }
+
+  .img_info {
+    width: 380px;
+    height: 330px;
+  }
+
+  .info_envios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .titulo_carta {
+    font-size: 33px;
+  }
+
+  .p_carta {
+    font-size: 17px;
+  }
+
+  .grande {
+    grid-column: span 2;
+  }
+}
+
+@media(max-width:824px) {
+  .boton_info {
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 2px 8px;
+  }
+
+  .link1 {
+    font-size: 15px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+  }
+
+  .link {
+    color: green;
+  }
+
+  .texto_info {
+    font-size: 16px;
+  }
+
+  .fondo_circulos {
+    width: 470px;
+    height: 260px;
+  }
+
+  .img_info {
+    width: 360px;
+    height: 310px;
+  }
+
+  .boton1_info {
+    padding: 10px 30px;
+  }
+
+  .boton2_info {
+    border: 1px solid black;
+    padding: 10px 30px;
+  }
+
+  .dentro_boton .flecha {
+    position: absolute;
+    top: 10px;
+  }
+
+  .fondo_hojas {
+    height: 170px;
+    width: 40px;
+    position: absolute;
+  }
+}
+
+@media(max-width:755px) {
+  .boton_info {
+    font-size: 15px;
+  }
+
+  .texto_info {
+    font-size: 15px;
+  }
+
+  .fondo_circulos {
+    width: 440px;
+    height: 230px;
+  }
+
+  .img_info {
+    width: 330px;
+    height: 280px;
+  }
+
+  .boton1_info {
+    padding: 7px 25px;
+  }
+
+  .boton2_info {
+    padding: 7px 25px;
+  }
+
+  .dentro_boton .flecha {
+    position: absolute;
+    top: 4px;
+  }
+
+  .img_comida {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 20;
+    top: -55px;
+  }
+
+  .fondo_hojas_pequeñas {
+    display: none;
+  }
+
+  .menu {
+    width: 100%;
+    align-items: center;
+  }
+
+  .grande {
+    grid-column: span 2;
+
+  }
+  .con_nav{
+    display: grid;
+    grid-template-rows:1fr 1fr ;
+    width: max-content;
+  }
+  .div_nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nombre_nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+  .p_envios{
+    width: 50%;
+  }
+}
+@media(max-width:699px){
+  .boton_info{
+    margin-top: 30px;
+  }
+  .fondo_hojas{
+    display: none;
+  }
+  nav{
+    background-color: rgba(0, 128, 0, 0.7);
+  }
+  .link {
+    color: white;
+  }
+  .info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  .boton1_info {
+    padding: 10px 20px;
+  }
+
+  .boton2_info {
+    border: 1px solid black;
+    padding: 10px 20px;
+
+  }
+  .dentro_boton .flecha {
+    right: 6px;
+    top:7px;
+  }
+}
+@media(max-width:699px){
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .fondo_circulos{
+    display: none;
+  }
+  .p_info{
+    text-align: center;
+    width: 100%;
+  }
+  .info_envios {
+    display: flex;
+    flex-direction: column;
+  }
+  .texto_info{
+    padding-bottom: 25px;
+  }
+  .boton_info{
+    margin-bottom: 20px;
+  }
+  .sub_menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+  .sub_comida {
+    width: 100%;
+  }
+}
+@media(max-width:548px){
+  .div_nav{
+    flex-direction: column;
+  }
+  .links_nav{
+    padding-bottom: 10px;
+  }
+}
+@media(max-width:529px){
+  .sub_menu{
+    grid-template-columns: 1fr;
+  }
+  .sub_comida {
+    width: 85%;
+  }
+  .texto_envio{
+    font-size: 15px;
+  }
+  .p_envios{
+    width: 70%;
+  }
+}
+@media(max-width:395px){
+  .fondo_hojas{
+    width: 25px;
+  }
+  .link1 {
+    font-size: 15px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+.img_info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+}
+@media(max-width:310px){
+  .boton1_info{
+    margin-bottom: 15px;
+  }
+}
