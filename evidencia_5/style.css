@@ -2,6 +2,9 @@
   box-sizing: border-box;
   margin: 0;
 }
+body{
+  min-width:300px;
+}
 
 .contenedor_principal {
   width: 100%;
