@@ -9,8 +9,16 @@ body {
     font-family: 'Roboto', sans-serif;
     
 }
+img{
+    width: 200px;
+    height: 200px;
 
-
+}
+.con_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .contenedor {
     width: 90%;
 
