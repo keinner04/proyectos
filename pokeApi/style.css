@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black ;
+    padding: 20px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+
+.contenedor {
+    width: 90%;
+
+}
+
+
+.con_todo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+}
+
+
+#card {
+    margin: 40px 0;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.card2 {
+    display: grid;
+    grid-template-rows: 0.3fr 0.7fr;
+    height: 80%;
+}
+
+
+.info {
+    color: white;
+    background: rgba(40, 40, 40, 0.7);
+    border-radius: 15px;
+    padding: 25px;
+    height: 70%;
+}
+.titulos_info{
+    margin: 10px 0;
+}
+#debilidad{
+    margin: 10px 0;
+}
+.boton_debi,.boton_tipo{
+    margin: 0 5px;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+
+.barras {
+    color: white;
+    background: rgba(35, 35, 35, 0.7);
+    border-radius: 15px;
+    padding: 25px;
+    font-size: 10px;
+    height: 90%;
+
+}
+
+
+#barras_con {
+    margin-top: 20px;
+}
+.titulo_barras{
+    font-size: 25px;
+}
+
+
+.barra {
+    border: solid 2px black;
+    height: 10px;
+    border-radius: 50px;
+}
+
+
+#porcentaje {
+    height: 100%;
+    border-radius: 50px;
+
+}
+
+
+#foto_poke {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+}
+
+
+@media (max-width: 768px) {
+    .con_todo {
+        grid-template-columns: 1fr;
+    }
+    
+    #card {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 380px) {
+    body{
+        padding: 0;
+        min-width: 300px;
+    }
+}
