@@ -123,7 +123,7 @@ function generar_tarjeta(lista = citas) {
                 })
 
                 select.forEach((element, index1) => {
-                        element.value = citas[index1].Estado
+                        element.value = lista[index1].Estado
                         element.addEventListener("input", () => {
                                 citas[index1].Estado = element.value
                                 localStorage.setItem("citas", JSON.stringify(citas));
