@@ -55,7 +55,7 @@ function save_data() {
                 Estado: "Abierta"
         };
 
-        citas.push(mascota);
+        citas.unshift(mascota);
         clear()
         console.log(citas);
         localStorage.setItem("citas", JSON.stringify(citas));
