@@ -13,40 +13,43 @@ let img_mascotas = [
 let validations1 = false
 let pos = null
 let op = 0
-
+let modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
 document.getElementById("guardar").addEventListener("click", () => {
         validations()
-        if (op == 0) {
-                if (validations1 == true) {
+        if (validations1) {
+                if (op == 0) {
                         save_data()
+                        document.querySelector("staticBackdrop[data-bs-dismiss='modal']").click()
                         Filtro()
                         clear()
                         validations1 = false
                         op = 0
                 }
+                else if (op == 1) {
+                        citas[pos].NamePet = document.getElementById("nombre_mascota").value;
+                        citas[pos].owner = document.getElementById("Propietario").value;
+                        citas[pos].number = document.getElementById("numero").value;
+                        citas[pos].date = document.getElementById("fecha").value;
+                        citas[pos].hour = document.getElementById("hora").value;
+                        citas[pos].type = document.getElementById("tipo_animal").value;
+                        citas[pos].description = document.getElementById("descripcion").value;
+                        localStorage.setItem("citas", JSON.stringify(citas));
+                        Filtro()
+                        clear()
+                        op = 0
+                        document.getElementById("guardar").textContent = "guardar"
+                        document.querySelector("staticBackdrop[data-bs-dismiss='modal']").click()
+                }
         }
 
-        else if (op == 1) {
-                citas[pos].NamePet = document.getElementById("nombre_mascota").value;
-                citas[pos].owner = document.getElementById("Propietario").value;
-                citas[pos].number = document.getElementById("numero").value;
-                citas[pos].date = document.getElementById("fecha").value;
-                citas[pos].hour = document.getElementById("hora").value;
-                citas[pos].type = document.getElementById("tipo_animal").value;
-                citas[pos].description = document.getElementById("descripcion").value;
-                localStorage.setItem("citas", JSON.stringify(citas));
-                Filtro()
-                clear()
-                op = 0
-                document.getElementById("save_data").textContent = "editar"
-                let modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
-                modal.hide();
-        }
+
 
 })
 
 function save_data() {
+        let num = Math.floor(Math.random() * new Date())
         const mascota = {
+                NumId: num,
                 NamePet: document.getElementById("nombre_mascota").value,
                 owner: document.getElementById("Propietario").value,
                 number: document.getElementById("numero").value,
@@ -94,14 +97,15 @@ function generar_tarjeta(lista = citas) {
                     <option value="Terminada">Terminada</option>
                     <option value="Anulada">Anulada</option>
                 </select>
-
+                <div class="conButton">
                 <button class="editar" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="edit(${realIndex})">Editar</button>
                 <button class="eliminar" name="delete" data-index="${realIndex}">Eliminar</button>
+                </div>
             </div>
         `;
         });
 
-        
+
         let borrar = contenedor.querySelectorAll("button[name='delete']");
         borrar.forEach((element) => {
                 const index = parseInt(element.getAttribute("data-index"));
@@ -123,7 +127,7 @@ function generar_tarjeta(lista = citas) {
                 });
         });
 
-        
+
         let select = contenedor.querySelectorAll("select[name='Estado']");
         select.forEach((element) => {
                 const index = parseInt(element.getAttribute("data-index"));
@@ -246,8 +250,7 @@ function edit(index) {
         document.getElementById("hora").value = item.hour;
         document.getElementById("tipo_animal").value = item.type;
         document.getElementById("descripcion").value = item.description;
-
-        document.getElementById("save_data").textContent = "Actualizar";
+        document.getElementById("guardar").textContent = "Actualizar";
 }
 document.addEventListener("DOMContentLoaded", () => {
         Filtro()
@@ -286,4 +289,9 @@ namef.addEventListener("input", () => {
         FilterName(namef.value)
         console.log(namef.value);
 
+})
+document.getElementById("delete").addEventListener("click",()=>{
+        clear()
+        op=0
+        document.getElementById("guardar").textContent="GUARDAR"
 })
