@@ -39,6 +39,8 @@ document.getElementById("guardar").addEventListener("click", () => {
                 clear()
                 op = 0
                 document.getElementById("save_data").textContent = "editar"
+                let modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
+                modal.hide();
         }
 
 })
@@ -71,68 +73,67 @@ function clear() {
 function generar_tarjeta(lista = citas) {
         const contenedor = document.getElementById("card1");
         contenedor.innerHTML = "";
-        lista.forEach((item, index) => {
+
+        lista.forEach((item) => {
+                const realIndex = citas.findIndex(c => c === item);
                 let find1 = img_mascotas.find(element => element.tipo === item.type);
-                console.log(find1.url);
+
                 contenedor.innerHTML += `
-                        <div class="tarjeta" id="tarjeta-${index}">
-                        <img src="${find1.url}" alt="" >
-                        <h1>Nombre: ${item.NamePet}</h1>
-                        <h3>Propietario: ${item.owner}</h3>
-                        <h3>Teléfono: ${item.number}</h3>
-                        <h3>Fecha: ${item.date}</h3>
-                        <h3>Hora: ${item.hour}</h3>
-                        <h3>mascota: ${item.type}</h3>
-                        <h3>Sistemas: ${item.description}</h3>
-                        <select name="Estado" class="estado">
-                                <label for="">Estado</label>
-                                <option value="Abierta">Abierta</option>
-                                <option value="Terminada">Terminada</option>
-                                <option value="Anulada">Anulada</option>
-                                </select>
-                        <button class="editar"data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="edit(${index})">Editar</button>
-                        <button class="eliminar" name="delete" ">Eliminar</button>
-                        </div>
-                `;
+            <div class="tarjeta" id="tarjeta-${realIndex}">
+                <img src="${find1?.url || ''}" alt="">
+                <h1 class=nombre>Nombre: ${item.NamePet}</h1>
+                <h3  class=Propietario>Propietario: ${item.owner}</h3>
+                <h3  class=Teléfono>Teléfono: ${item.number}</h3>
+                <h3  class=Fecha>Fecha: ${item.date}</h3>
+                <h3  class=Hora>Hora: ${item.hour}</h3>
+                <h3  class=Mascota>Mascota: ${item.type}</h3>
+                <h3  class=Sintomas>Sintomas: ${item.description}</h3>
 
+                <select name="Estado" class="estado" data-index="${realIndex}">
+                    <option value="Abierta">Abierta</option>
+                    <option value="Terminada">Terminada</option>
+                    <option value="Anulada">Anulada</option>
+                </select>
 
-                let borrar = contenedor.querySelectorAll("button[name='delete']")
-                let select = contenedor.querySelectorAll("select[name='Estado']")
-                borrar.forEach((element, index) => {
-                        element.addEventListener("click", () => {
-                                Swal.fire({
-                                        title: "Are you sure?",
-                                        text: "You won't be able to revert this!",
-                                        icon: "warning",
-                                        showCancelButton: true,
-                                        confirmButtonColor: "#3085d6",
-                                        cancelButtonColor: "#d33",
-                                        confirmButtonText: "Yes, delete it!"
-                                }).then((result) => {
-                                        if (result.isConfirmed) {
-                                                DeleteCard(index)
-                                                Swal.fire({
-                                                        title: "Deleted!",
-                                                        text: "Your file has been deleted.",
-                                                        icon: "success"
-                                                });
-
-                                        }
-                                });
-                        })
-                })
-
-                select.forEach((element, index1) => {
-                        element.value = lista[index1].Estado
-                        element.addEventListener("input", () => {
-                                citas[index1].Estado = element.value
-                                localStorage.setItem("citas", JSON.stringify(citas));
-                                Filtro()
-                        })
-                })
+                <button class="editar" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="edit(${realIndex})">Editar</button>
+                <button class="eliminar" name="delete" data-index="${realIndex}">Eliminar</button>
+            </div>
+        `;
         });
 
+        
+        let borrar = contenedor.querySelectorAll("button[name='delete']");
+        borrar.forEach((element) => {
+                const index = parseInt(element.getAttribute("data-index"));
+                element.addEventListener("click", () => {
+                        Swal.fire({
+                                title: "¿Estás seguro?",
+                                text: "¡No podrás revertir esto!",
+                                icon: "warning",
+                                showCancelButton: true,
+                                confirmButtonColor: "#3085d6",
+                                cancelButtonColor: "#d33",
+                                confirmButtonText: "Sí, eliminar"
+                        }).then((result) => {
+                                if (result.isConfirmed) {
+                                        DeleteCard(index);
+                                        Swal.fire("¡Eliminado!", "La cita ha sido eliminada.", "success");
+                                }
+                        });
+                });
+        });
 
+        
+        let select = contenedor.querySelectorAll("select[name='Estado']");
+        select.forEach((element) => {
+                const index = parseInt(element.getAttribute("data-index"));
+                element.value = citas[index].Estado;
+                element.addEventListener("input", () => {
+                        citas[index].Estado = element.value;
+                        localStorage.setItem("citas", JSON.stringify(citas));
+                        Filtro();
+                });
+        });
 }
 
 function validations() {
