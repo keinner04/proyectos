@@ -1,4 +1,4 @@
-
+/* Estilos base */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
@@ -12,7 +12,6 @@ body {
     padding: 0;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    
 }
 
 .titulo {
@@ -28,7 +27,6 @@ body {
     font-size: 28px;
 }
 
-
 #card1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -36,24 +34,36 @@ body {
     padding: 15px;
 }
 
-
-/*filto y modal*/
 .filtro {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
     flex-wrap: wrap;
-    align-items: center;
+    gap: 10px;
     padding: 15px;
-    background-color: #f0f8ff;
-    border-radius: 5px;
+    background-color: #e9f5ff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    align-items: center;
 }
 
+
 .filtro select, 
-.filtro input{
+.filtro input {
     padding: 8px 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 14px;
+    min-width: 180px;
+}
+
+
+.filtro .btn-primary {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
 }
 
 .modal-body {
@@ -62,20 +72,17 @@ body {
     gap: 15px;
     padding: 20px;
 }
-img{
-    width: 250px;
-}
-/*estilo tarjeta */
+
+/* Estilo tarjeta con imágenes uniformes */
 .tarjeta {
     background: white;
     border-radius: 10px;
-    border: 1px solid  #007bff;
     padding: 20px;
     margin-bottom: 20px;
     transition: transform 0.2s ease;
-    max-width: 350px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
-
 .tarjeta:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -83,8 +90,7 @@ img{
 
 .tarjeta img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 300px;
     border-radius: 8px;
     margin-bottom: 15px;
 }
@@ -104,32 +110,29 @@ img{
     font-weight: normal;
 }
 
-
 .estado {
     width: 100%;
     padding: 8px;
     margin: 15px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
-
 }
 
 .editar, .eliminar {
-    width: 48%;
+    width: 48%; 
     padding: 8px;
     border: 1px solid black;
     border-radius: 5px;
-
+    margin-bottom: 0;
 }
 
+.botones{
+    display: flex;
+}
 .editar {
     background-color: #3498db;
     color: white;
-    margin-right: 4%;
-}
-
-.editar:hover {
-    background-color: #2980b9;
+    margin-right: 4%; 
 }
 
 .eliminar {
@@ -137,6 +140,130 @@ img{
     color: white;
 }
 
+.editar:hover {
+    background-color: #2980b9;
+}
+
+
 .eliminar:hover {
     background-color: #c0392b;
+}
+
+/* Media Queries para responsive design */
+
+/* Pantallas grandes (1200px - 1500px) */
+@media (max-width: 1500px) {
+    #card1 {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+
+}
+
+/* Tablets grandes y pantallas medianas (900px - 1200px) */
+@media (max-width: 1200px) {
+    #card1 {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    
+    .titulo h1 {
+        font-size: 24px;
+    }
+}
+
+/* Tablets pequeñas (600px - 900px) */
+@media (max-width: 900px) {
+    #card1 {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+
+    
+    .filtro {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+
+}
+@media (max-width: 768px) {
+    .filtro {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filtro select, 
+    .filtro input,
+    .filtro .btn-primary {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .filtro .btn-primary {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+/* Móviles grandes (450px - 600px) */
+@media (max-width: 600px) {
+    #card1 {
+        grid-template-columns: 1fr;
+    }
+    
+    
+    body {
+        padding: 10px;
+    }
+    
+    .titulo {
+        padding: 15px;
+    }
+    
+    .titulo h1 {
+        font-size: 20px;
+    }
+}
+
+/* Móviles pequeños (300px - 450px) */
+@media (max-width: 450px) {
+    .tarjeta img {
+        height: 180px;
+    }
+    
+    .tarjeta h1.nombre {
+        font-size: 1.3rem;
+    }
+    
+    .modal-dialog {
+        margin: 10px;
+    }
+    
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* Móviles muy pequeños (hasta 300px) */
+@media (max-width: 300px) {
+    .tarjeta img {
+        height: 150px;
+    }
+    
+    .tarjeta {
+        padding: 15px;
+    }
+    
+    .editar, .eliminar {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .editar {
+        margin-right: 0;
+    }
+    
+    .titulo h1 {
+        font-size: 18px;
+    }
 }
