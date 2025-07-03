@@ -13,43 +13,40 @@ let img_mascotas = [
 let validations1 = false
 let pos = null
 let op = 0
-let modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
+
 document.getElementById("guardar").addEventListener("click", () => {
         validations()
-        if (validations1) {
-                if (op == 0) {
+        if (op == 0) {
+                if (validations1 == true) {
                         save_data()
-                        document.querySelector("staticBackdrop[data-bs-dismiss='modal']").click()
                         Filtro()
                         clear()
                         validations1 = false
                         op = 0
                 }
-                else if (op == 1) {
-                        citas[pos].NamePet = document.getElementById("nombre_mascota").value;
-                        citas[pos].owner = document.getElementById("Propietario").value;
-                        citas[pos].number = document.getElementById("numero").value;
-                        citas[pos].date = document.getElementById("fecha").value;
-                        citas[pos].hour = document.getElementById("hora").value;
-                        citas[pos].type = document.getElementById("tipo_animal").value;
-                        citas[pos].description = document.getElementById("descripcion").value;
-                        localStorage.setItem("citas", JSON.stringify(citas));
-                        Filtro()
-                        clear()
-                        op = 0
-                        document.getElementById("guardar").textContent = "guardar"
-                        document.querySelector("staticBackdrop[data-bs-dismiss='modal']").click()
-                }
         }
 
-
+        else if (op == 1) {
+                citas[pos].NamePet = document.getElementById("nombre_mascota").value;
+                citas[pos].owner = document.getElementById("Propietario").value;
+                citas[pos].number = document.getElementById("numero").value;
+                citas[pos].date = document.getElementById("fecha").value;
+                citas[pos].hour = document.getElementById("hora").value;
+                citas[pos].type = document.getElementById("tipo_animal").value;
+                citas[pos].description = document.getElementById("descripcion").value;
+                localStorage.setItem("citas", JSON.stringify(citas));
+                Filtro()
+                clear()
+                op = 0
+                document.getElementById("guardar").textContent = "editar"
+                let modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
+                modal.hide();
+        }
 
 })
 
 function save_data() {
-        let num = Math.floor(Math.random() * new Date())
         const mascota = {
-                NumId: num,
                 NamePet: document.getElementById("nombre_mascota").value,
                 owner: document.getElementById("Propietario").value,
                 number: document.getElementById("numero").value,
@@ -74,12 +71,19 @@ function clear() {
         document.getElementById("descripcion").value = ""
 }
 function generar_tarjeta(lista = citas) {
+        lista.sort((a,b)=>{
+                const fecha_a= new Date(`${a.date}  ${a.hour}`)
+                const fecha_b= new Date(`${b.date}  ${b.hour}`)
+                return fecha_a-fecha_b
+        })
         const contenedor = document.getElementById("card1");
         contenedor.innerHTML = "";
 
         lista.forEach((item) => {
                 const realIndex = citas.findIndex(c => c === item);
                 let find1 = img_mascotas.find(element => element.tipo === item.type);
+
+                const id = Date.now() + '' + Math.floor(Math.random() * 1000);
 
                 contenedor.innerHTML += `
             <div class="tarjeta" id="tarjeta-${realIndex}">
@@ -97,7 +101,7 @@ function generar_tarjeta(lista = citas) {
                     <option value="Terminada">Terminada</option>
                     <option value="Anulada">Anulada</option>
                 </select>
-                <div class="conButton">
+                <div class="botones">
                 <button class="editar" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="edit(${realIndex})">Editar</button>
                 <button class="eliminar" name="delete" data-index="${realIndex}">Eliminar</button>
                 </div>
@@ -139,6 +143,8 @@ function generar_tarjeta(lista = citas) {
                 });
         });
 }
+
+
 
 function validations() {
         let NamePet = document.getElementById("nombre_mascota").value;
@@ -250,7 +256,8 @@ function edit(index) {
         document.getElementById("hora").value = item.hour;
         document.getElementById("tipo_animal").value = item.type;
         document.getElementById("descripcion").value = item.description;
-        document.getElementById("guardar").textContent = "Actualizar";
+
+        document.getElementById("save_data").textContent = "Actualizar";
 }
 document.addEventListener("DOMContentLoaded", () => {
         Filtro()
@@ -289,9 +296,4 @@ namef.addEventListener("input", () => {
         FilterName(namef.value)
         console.log(namef.value);
 
-})
-document.getElementById("delete").addEventListener("click",()=>{
-        clear()
-        op=0
-        document.getElementById("guardar").textContent="GUARDAR"
 })
