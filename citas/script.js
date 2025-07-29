@@ -38,7 +38,7 @@ document.getElementById("guardar").addEventListener("click", () => {
                 Filtro()
                 clear()
                 op = 0
-                document.getElementById("guardar").textContent = "editar"
+                document.getElementById("guardar").textContent = "Guardar";
                 let modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
                 modal.hide();
         }
@@ -244,6 +244,15 @@ function validations() {
                 validations1 = true
         }
 }
+document.getElementById("cerrar1").addEventListener("click",()=>{
+        clear()
+        document.getElementById("guardar").textContent = "Guardar";
+})
+document.getElementById("cerrar2").addEventListener("click",()=>{
+        clear()
+        document.getElementById("guardar").textContent = "Guardar";
+})
+
 function edit(index) {
         pos = index;
         op = 1;
@@ -257,7 +266,7 @@ function edit(index) {
         document.getElementById("tipo_animal").value = item.type;
         document.getElementById("descripcion").value = item.description;
 
-        document.getElementById("save_data").textContent = "Actualizar";
+        document.getElementById("guardar").textContent = "Actualizar";
 }
 document.addEventListener("DOMContentLoaded", () => {
         Filtro()
