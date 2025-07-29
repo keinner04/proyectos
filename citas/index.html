@@ -21,13 +21,15 @@
         </div>
         
         <div class="filtro">
-            <select name="" id="EstadoFiltro" class="EstadoFiltro">
-                <label for="">filtrar por esado</label>
-                <option value="Abierta">Abierta</option>
-                <option value="Terminada">Terminada</option>
-                <option value="Anulada">Anulada</option>
-            </select>
-            <input type="text" id="BuscarNombre">
+            <div class="con-filtro">
+                <select name="" id="EstadoFiltro" class="EstadoFiltro">
+                    <label for="">filtrar por estado</label>
+                    <option value="Abierta">Abierta</option>
+                    <option value="Terminada">Terminada</option>
+                    <option value="Anulada">Anulada</option>
+                </select>
+                <input type="text" id="BuscarNombre" placeholder="Buscar por nombre o propietario">
+            </div>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Agendar cita
@@ -43,13 +45,20 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" id="cerrar1" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <input type="text" placeholder="Nombre  Mascota" id="nombre_mascota">
-                            <input type="text" placeholder="Propietario" id="Propietario">
-                            <input type="number" id="numero">
+                            <label for="">Nombre de la Mascota</label>
+                            <input type="text"id="nombre_mascota">
+                            <label for="">Propietario</label>
+                            <input type="text"  id="Propietario">
+                            <label for="">Telefono</label>
+                            <input type="number" p id="numero">
+                            <label for="">Fecha cita</label>
                             <input type="date" name="" id="fecha">
+                            <label for="">Hora cita</label>
                             <input type="time" name="" id="hora">
+                            <label for="">Tipo de mascota</label>
                             <select name="" id="tipo_animal">
-                                <label for="">filtrar por esado</label>
+                                <label for="">filtrar por estado</label>
+                                <option selected>Escoge una mascota</option>
                                 <option value="Perro">Perro</option>
                                 <option value="Gato">Gato</option>
                                 <option value="Tortuga">Tortuga</option>
@@ -60,6 +69,7 @@
                                 <option value="Loro">Loro</option>
                                 <option value="Caballo">Caballo</option>
                             </select>
+                            <label for="">Sintomas</label>
                             <textarea name="" id="descripcion"></textarea>
                         </div>
                         <div class="modal-footer">
@@ -79,4 +89,3 @@
 </body>
 
 </html>
-
