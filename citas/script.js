@@ -166,82 +166,76 @@ function validations() {
                 Swal.fire({
                         icon: "error",
                         title: "Digite el nombre de la mascota",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
+                       
                 });
         } else if (owner == "") {
                 Swal.fire({
                         icon: "error",
                         title: "Digite el propietario",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
+                       
                 });
         } else if (number == "") {
                 Swal.fire({
                         icon: "error",
                         title: "Digite su numero de telefono",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
+                       
                 });
-        } else if (date == "") {
+        } 
+        else if (number.length < 10 || number.length > 11) {
+                Swal.fire({
+                        icon: "error",
+                        title: "Digite un numero de celular con 10 digitos",
+                       
+                });
+        }else if (date == "") {
                 Swal.fire({
                         icon: "error",
                         title: "Digite la fecha ",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
+                        
                 });
         }
+         else if (fechaSeleccionada < fechaActual) {
+                Swal.fire({
+                        icon: "error",
+                        title: "Fecha invalida",
+                       
+                });
+
+        } 
         else if (hour == "") {
                 Swal.fire({
                         icon: "error",
                         title: "Digite la hora",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
+                       
                 });
-        } else if (type == "") {
-                Swal.fire({
-                        icon: "error",
-                        title: "Digite el tipo de mascota",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
-                });
-        } else if (description == "") {
-                Swal.fire({
-                        icon: "error",
-                        title: "Digite una descripcion",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
-                });
-        } else if (description.length > 400) {
-                Swal.fire({
-                        icon: "error",
-                        title: "Digite una descripcion menor a 400 caracteres",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
-                });
-        }
-        else if (h < 8 || h > 20 || (h === 20 && m > 0)) {
+                
+        }    else if (h < 8 || h > 20 || (h === 20 && m > 0)) {
                 Swal.fire({
                         icon: "error",
                         title: "Nuestra veterinaria trabaja de 8:00Am a 8:00Pm ",
                         text: "Por favor digita una hora que este en nuestro rango de trabajo",
                 });
-        } else if (fechaSeleccionada < fechaActual) {
+        }else if (type == "") {
                 Swal.fire({
                         icon: "error",
-                        title: "Fecha invalida",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
+                        title: "Digite el tipo de mascota",
+                       
                 });
-
-        } else if (number.length < 10 || number.length > 11) {
+        } else if (description == "") {
                 Swal.fire({
                         icon: "error",
-                        title: "Digite un numero de celular con 10 digitos",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
+                        title: "Digite una descripcion",
+                        
                 });
-        } else {
+        } else if (description.length > 400) {
+                Swal.fire({
+                        icon: "error",
+                        title: "Digite una descripcion menor a 400 caracteres",
+                       
+                });
+        }
+    
+        else {
                 validations1 = true
         }
 }
@@ -307,3 +301,4 @@ namef.addEventListener("input", () => {
         console.log(namef.value);
 
 })
+
