@@ -68,7 +68,7 @@ function clear() {
         document.getElementById("numero").value = ""
         document.getElementById("fecha").value = ""
         document.getElementById("hora").value = ""
-        document.getElementById("tipo_animal").value ="Escoge"
+        document.getElementById("tipo_animal").value =""
         document.getElementById("descripcion").value = ""
 }
 function generar_tarjeta(lista = citas) {
@@ -237,15 +237,19 @@ function validations() {
     
         else {
                 validations1 = true
+                 let modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
+                modal.hide();
         }
 }
 document.getElementById("cerrar1").addEventListener("click",()=>{
         clear()
         document.getElementById("guardar").textContent = "Guardar";
+        op=0
 })
 document.getElementById("cerrar2").addEventListener("click",()=>{
         clear()
         document.getElementById("guardar").textContent = "Guardar";
+        op=0
 })
 
 function edit(index) {
@@ -301,4 +305,3 @@ namef.addEventListener("input", () => {
         console.log(namef.value);
 
 })
-
