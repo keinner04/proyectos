@@ -68,6 +68,7 @@ function clear() {
         document.getElementById("numero").value = ""
         document.getElementById("fecha").value = ""
         document.getElementById("hora").value = ""
+        document.getElementById("tipo_animal").value ="Escoge"
         document.getElementById("descripcion").value = ""
 }
 function generar_tarjeta(lista = citas) {
